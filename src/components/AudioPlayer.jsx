@@ -1,6 +1,9 @@
 import React, { useRef, useEffect } from 'react';
 import { observer } from 'mobx-react';
 
+import { Image, SimpleCell, Headline, Subhead } from '@vkontakte/vkui';
+import { Icon16MoreVertical } from '@vkontakte/icons';
+
 import audioPlayerStore from '../stores/AudioPlayerStore';
 
 import formatTime from '../utils/formatTime';
@@ -18,13 +21,13 @@ const AudioPlayer = observer(() => {
     }
   }, [audioPlayerStore.isPlaying]);
 
-  const handlePlayPause = () => {
-    if (audioPlayerStore.isPlaying) {
-      audioPlayerStore.pause();
-    } else {
-      audioPlayerStore.play();
-    }
-  };
+  // const handlePlayPause = () => {
+  //   if (audioPlayerStore.isPlaying) {
+  //     audioPlayerStore.pause();
+  //   } else {
+  //     audioPlayerStore.play();
+  //   }
+  // };
 
   const handleTimeUpdate = () => {
     audioPlayerStore.setProgress(audioRef.current.currentTime);
@@ -35,38 +38,35 @@ const AudioPlayer = observer(() => {
   };
 
   return (
-    <div className="player">
-      <img
-        className="player__image"
-        src={audioPlayerStore.currentTrack.cover}
-        alt="cover"
-      />
-
-      <div className="player__description">
-        <div className="player__title">
-          {audioPlayerStore.currentTrack.title}
+    <SimpleCell
+      className="player player__block"
+      hasHover
+      hasActive
+      onClick={() => {}}
+      before={
+        <Image
+          src={audioPlayerStore.currentTrack.cover}
+          alt="cover"
+          size={40}
+        />
+      }
+      after={
+        <div className="player player__info">
+          <Subhead className="player player__duration">
+            {audioPlayerStore.isPlaying || audioPlayerStore.progress > 0
+              ? formatTime(audioPlayerStore.progress)
+              : formatTime(audioPlayerStore.duration)}
+          </Subhead>
+          <Icon16MoreVertical className="player player__more" />
         </div>
-        <div className="player__artist">
-          {audioPlayerStore.currentTrack.artist}
-        </div>
-      </div>
-
-      <div className="player__options">
-        <div className="player__duration">
-          {audioPlayerStore.isPlaying || audioPlayerStore.progress > 0
-            ? formatTime(audioPlayerStore.progress)
-            : formatTime(audioPlayerStore.duration)}
-        </div>
-        <div className="player__more">
-          <span className="player__dot"></span>
-          <span className="player__dot"></span>
-          <span className="player__dot"></span>
-        </div>
-      </div>
-
-      <button onClick={handlePlayPause} className="player__button">
-        {audioPlayerStore.isPlaying ? 'Pause' : 'Play'}
-      </button>
+      }
+    >
+      <Headline className="player player__title">
+        {audioPlayerStore.currentTrack.title}
+      </Headline>
+      <Subhead className="player player__artist">
+        {audioPlayerStore.currentTrack.artist}
+      </Subhead>
 
       <audio
         ref={audioRef}
@@ -74,7 +74,7 @@ const AudioPlayer = observer(() => {
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
       />
-    </div>
+    </SimpleCell>
   );
 });
 
