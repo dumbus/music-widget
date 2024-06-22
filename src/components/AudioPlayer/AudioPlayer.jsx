@@ -30,10 +30,6 @@ export const AudioPlayer = observer(() => {
     audioPlayerStore.setProgress(audioRef.current.currentTime);
   };
 
-  const handleLoadedMetadata = () => {
-    audioPlayerStore.setDuration(audioRef.current.duration);
-  };
-
   return (
     <SimpleCell
       className="player player__block"
@@ -49,7 +45,6 @@ export const AudioPlayer = observer(() => {
         ref={audioRef}
         src={audioPlayerStore.currentTrack.src}
         onTimeUpdate={handleTimeUpdate}
-        onLoadedMetadata={handleLoadedMetadata}
       />
     </SimpleCell>
   );

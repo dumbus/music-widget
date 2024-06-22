@@ -8,11 +8,11 @@ class AudioPlayerStore {
     title: 'Never Gonna Give You Up',
     artist: 'Rick Astley',
     src: audio,
-    cover: cover
+    cover: cover,
+    duration: 214
   };
   isPlaying = false;
   progress = 0;
-  duration = 0;
 
   constructor() {
     makeAutoObservable(this);
