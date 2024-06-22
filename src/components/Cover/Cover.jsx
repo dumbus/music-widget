@@ -5,6 +5,8 @@ import { Icon20PlayCircle, Icon20PauseCircle } from '@vkontakte/icons';
 
 import audioPlayerStore from '../../stores/AudioPlayerStore';
 
+import { Equalizer } from '..';
+
 import './Cover.css';
 
 export const Cover = observer(() => {
@@ -19,38 +21,7 @@ export const Cover = observer(() => {
       {audioPlayerStore.isPlaying && (
         <Icon20PauseCircle className="player player__cover_playing" />
       )}
-      <div className="player player__equalizer">
-        <div
-          className={`player player__bar 
-          ${audioPlayerStore.progress > 0 ? 'player__bar_visible' : ''} 
-          ${audioPlayerStore.isPlaying > 0 ? 'player__bar_active' : ''}
-          `}
-        />
-        <div
-          className={`player player__bar 
-          ${audioPlayerStore.progress > 0 ? 'player__bar_visible' : ''} 
-          ${audioPlayerStore.isPlaying > 0 ? 'player__bar_active' : ''}
-          `}
-        />
-        <div
-          className={`player player__bar 
-          ${audioPlayerStore.progress > 0 ? 'player__bar_visible' : ''} 
-          ${audioPlayerStore.isPlaying > 0 ? 'player__bar_active' : ''}
-          `}
-        />
-        <div
-          className={`player player__bar 
-          ${audioPlayerStore.progress > 0 ? 'player__bar_visible' : ''} 
-          ${audioPlayerStore.isPlaying > 0 ? 'player__bar_active' : ''}
-          `}
-        />
-        <div
-          className={`player player__bar 
-          ${audioPlayerStore.progress > 0 ? 'player__bar_visible' : ''} 
-          ${audioPlayerStore.isPlaying > 0 ? 'player__bar_active' : ''}
-          `}
-        />
-      </div>
+      <Equalizer />
     </div>
   );
 });
