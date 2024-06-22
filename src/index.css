@@ -1,3 +1,9 @@
+:root {
+  --gray-text-color: #818c99;
+  --white: #ffffff;
+  --overlay-color: rgba(0, 0, 0, 0.6);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

@@ -25,14 +25,9 @@
 .player.player__artist,
 .player.player__duration {
   letter-spacing: 0.2px;
-  color: #818c99;
+  color: var(--gray-text-color);
 }
 
 .player.player__duration {
   padding: 0 0 0 12px;
-}
-
-.player.player__duration_skeleton {
-  width: 26px;
-  height: 16px;
 }
