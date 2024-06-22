@@ -13,6 +13,11 @@
   white-space: nowrap;
 }
 
+.player.player__title_artist {
+  display: flex;
+  flex-direction: column;
+}
+
 .player.player__title {
   letter-spacing: 0.15px;
 }
@@ -25,4 +30,9 @@
 
 .player.player__duration {
   padding: 0 0 0 12px;
+}
+
+.player.player__duration_skeleton {
+  width: 26px;
+  height: 16px;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { observer } from 'mobx-react';
-import { Headline, Subhead } from '@vkontakte/vkui';
+import { Headline, Subhead, Skeleton } from '@vkontakte/vkui';
 
 import audioPlayerStore from '../../stores/AudioPlayerStore';
 import formatTime from '../../utils/formatTime';
@@ -18,11 +18,17 @@ export const Info = observer(() => {
           {audioPlayerStore.currentTrack.artist}
         </Subhead>
       </div>
-      <Subhead className="player player__duration">
-        {audioPlayerStore.isPlaying || audioPlayerStore.progress > 0
-          ? formatTime(audioPlayerStore.progress)
-          : formatTime(audioPlayerStore.duration)}
-      </Subhead>
+      <div className="player player__duration">
+        <Subhead>
+          {audioPlayerStore.duration === 0 ? (
+            <Skeleton className="player player__duration_skeleton" />
+          ) : audioPlayerStore.isPlaying || audioPlayerStore.progress > 0 ? (
+            formatTime(audioPlayerStore.progress)
+          ) : (
+            formatTime(audioPlayerStore.duration)
+          )}
+        </Subhead>
+      </div>
     </div>
   );
 });
