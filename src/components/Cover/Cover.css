@@ -30,8 +30,7 @@
 .player:hover .player__cover_paused,
 .player:hover .player__cover_playing,
 .player:hover .player.player__overlay::after,
-.player.player__overlay.player__overlay_active::after,
-.player.player__bar_visible {
+.player.player__overlay.player__overlay_active::after {
   opacity: 1;
 }
 
@@ -58,6 +57,10 @@
 
 .player:hover .player.player__bar_visible {
   opacity: 0;
+}
+
+.player.player__bar_visible {
+  opacity: 1;
 }
 
 .player.player__bar.player__bar_active:nth-child(1) {
