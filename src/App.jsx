@@ -6,9 +6,9 @@ import {
   Div
 } from '@vkontakte/vkui';
 
-import './App.css';
+import { AudioPlayer } from './components';
 
-import AudioPlayer from './components/AudioPlayer';
+import './App.css';
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
       <AdaptivityProvider>
         <AppRoot>
           <Div className="container">
-            <AudioPlayer audioSrc="./audio/audio.mp3" />
+            <AudioPlayer />
           </Div>
         </AppRoot>
       </AdaptivityProvider>

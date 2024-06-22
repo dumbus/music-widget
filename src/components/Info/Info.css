@@ -1,0 +1,17 @@
+.player.player__info {
+  display: flex;
+  align-items: center;
+  width: 62px;
+  height: 40px;
+  padding: 0 0 0 12px;
+}
+
+.player.player__duration {
+  padding: 8px 0 8px 0;
+  letter-spacing: 0.2px;
+  color: #818c99;
+}
+
+.player.player__more {
+  margin: 12px 2px 12px 14px;
+}
