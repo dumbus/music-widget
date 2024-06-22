@@ -3,7 +3,7 @@ import { observer } from 'mobx-react';
 import { SimpleCell } from '@vkontakte/vkui';
 
 import audioPlayerStore from '../../stores/AudioPlayerStore';
-import { Cover, Text, Info } from '..';
+import { Cover, Info, More } from '..';
 
 import './AudioPlayer.css';
 
@@ -41,9 +41,9 @@ export const AudioPlayer = observer(() => {
       hasActive
       onClick={handlePlayPause}
       before={<Cover />}
-      after={<Info />}
+      after={<More />}
     >
-      <Text />
+      <Info />
 
       <audio
         ref={audioRef}
