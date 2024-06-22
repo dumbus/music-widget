@@ -2,7 +2,11 @@ import React, { useRef, useEffect } from 'react';
 import { observer } from 'mobx-react';
 
 import { Image, SimpleCell, Headline, Subhead } from '@vkontakte/vkui';
-import { Icon16MoreVertical } from '@vkontakte/icons';
+import {
+  Icon16MoreVertical,
+  Icon20PlayCircle,
+  Icon20PauseCircle
+} from '@vkontakte/icons';
 
 import audioPlayerStore from '../stores/AudioPlayerStore';
 
@@ -21,13 +25,13 @@ const AudioPlayer = observer(() => {
     }
   }, [audioPlayerStore.isPlaying]);
 
-  // const handlePlayPause = () => {
-  //   if (audioPlayerStore.isPlaying) {
-  //     audioPlayerStore.pause();
-  //   } else {
-  //     audioPlayerStore.play();
-  //   }
-  // };
+  const handlePlayPause = () => {
+    if (audioPlayerStore.isPlaying) {
+      audioPlayerStore.pause();
+    } else {
+      audioPlayerStore.play();
+    }
+  };
 
   const handleTimeUpdate = () => {
     audioPlayerStore.setProgress(audioRef.current.currentTime);
@@ -42,13 +46,55 @@ const AudioPlayer = observer(() => {
       className="player player__block"
       hasHover
       hasActive
-      onClick={() => {}}
+      onClick={handlePlayPause}
       before={
-        <Image
-          src={audioPlayerStore.currentTrack.cover}
-          alt="cover"
-          size={40}
-        />
+        <div
+          className={`player player__overlay ${audioPlayerStore.isPlaying || audioPlayerStore.progress > 0 ? 'player__overlay_active' : ''}`}
+        >
+          <Image
+            src={audioPlayerStore.currentTrack.cover}
+            alt="cover"
+            size={40}
+          />
+          {!audioPlayerStore.isPlaying && (
+            <Icon20PlayCircle className="player player__cover_paused" />
+          )}
+          {audioPlayerStore.isPlaying && (
+            <Icon20PauseCircle className="player player__cover_playing" />
+          )}
+          <div className="player player__equalizer">
+            <div
+              className={`player player__bar 
+                ${audioPlayerStore.progress > 0 ? 'player__bar_visible' : ''} 
+                ${audioPlayerStore.isPlaying > 0 ? 'player__bar_active' : ''}
+                `}
+            />
+            <div
+              className={`player player__bar 
+                ${audioPlayerStore.progress > 0 ? 'player__bar_visible' : ''} 
+                ${audioPlayerStore.isPlaying > 0 ? 'player__bar_active' : ''}
+                `}
+            />
+            <div
+              className={`player player__bar 
+                ${audioPlayerStore.progress > 0 ? 'player__bar_visible' : ''} 
+                ${audioPlayerStore.isPlaying > 0 ? 'player__bar_active' : ''}
+                `}
+            />
+            <div
+              className={`player player__bar 
+                ${audioPlayerStore.progress > 0 ? 'player__bar_visible' : ''} 
+                ${audioPlayerStore.isPlaying > 0 ? 'player__bar_active' : ''}
+                `}
+            />
+            <div
+              className={`player player__bar 
+                ${audioPlayerStore.progress > 0 ? 'player__bar_visible' : ''} 
+                ${audioPlayerStore.isPlaying > 0 ? 'player__bar_active' : ''}
+                `}
+            />
+          </div>
+        </div>
       }
       after={
         <div className="player player__info">
