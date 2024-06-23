@@ -1,0 +1,35 @@
+.player.player__overlay {
+  position: relative;
+  z-index: 1;
+}
+
+.player.player__overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-color);
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.player.player__cover_paused,
+.player.player__cover_playing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0;
+}
+
+.player:hover .player__cover_paused,
+.player:hover .player__cover_playing,
+.player:hover .player.player__overlay::after,
+.player.player__overlay.player__overlay_active::after {
+  opacity: 1;
+}

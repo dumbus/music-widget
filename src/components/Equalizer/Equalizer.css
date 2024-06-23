@@ -1,0 +1,63 @@
+.player.player__equalizer {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 16px;
+  height: 20px;
+  z-index: 10;
+}
+
+.player.player__bar {
+  width: 1.5px;
+  height: 1.5px;
+  background-color: var(--white);
+  transform-origin: bottom;
+  opacity: 0;
+}
+
+.player:hover .player.player__bar_visible {
+  opacity: 0;
+}
+
+.player.player__bar_visible {
+  opacity: 1;
+}
+
+.player.player__bar.player__bar_active:nth-child(1) {
+  animation: jump 0.5s infinite;
+  animation-delay: 0.1s;
+}
+
+.player.player__bar.player__bar_active:nth-child(2) {
+  animation: jump 0.5s infinite;
+  animation-delay: 0.2s;
+}
+
+.player.player__bar.player__bar_active:nth-child(3) {
+  animation: jump 0.5s infinite;
+  animation-delay: 0.3s;
+}
+
+.player.player__bar.player__bar_active:nth-child(4) {
+  animation: jump 0.5s infinite;
+  animation-delay: 0.4s;
+}
+
+.player.player__bar.player__bar_active:nth-child(5) {
+  animation: jump 0.5s infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes jump {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(8);
+  }
+}
