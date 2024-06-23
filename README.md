@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+## Тестовое задание для стажировки "Фронтенд-разработчик в VK Музыку" - "Music Widget"
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![react](https://img.shields.io/badge/react-18.3.1-blue)
+![mobx](https://img.shields.io/badge/mobx-6.12.4-blue)
+![mobx-react](https://img.shields.io/badge/mobx--react-9.1.1-blue)
+![@vkontakte/vkui](https://img.shields.io/badge/%40vkontakte%2Fvkui-6.1.1-blue)
+![@vkontakte/icons](https://img.shields.io/badge/%40vkontakte%2Ficons-2.122.0-blue)
+![eslint](https://img.shields.io/badge/eslint-8.57.0-blue)
+![prettier](https://img.shields.io/badge/prettier-3.3.2-blue)
 
-## Available Scripts
+## Использованные технологии и инструменты
 
-In the project directory, you can run:
+1. [React](https://react.dev/)
 
-### `npm start`
+2. [Mobx](https://mobx.js.org/README.html)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. [VK UI](https://vkcom.github.io/VKUI/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. [VK Icons](https://vkcom.github.io/icons/)
 
-### `npm test`
+5. [ESLint](https://eslint.org/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+6. [Prettier](https://prettier.io/)
 
-### `npm run build`
+## Назначение приложения
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Приложение представляет из себя виджет для произведения аудиозаписи. [Макет в Figma](https://www.figma.com/design/9d3ErSuSrLY1qCuSRPk80C/AudioCell?node-id=1-2&t=fcTxxng56ygqFZUu-0).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> В качестве референса использовался интерфейс [VK Музыка](https://vk.com/audio).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Как посмотреть на работу приложения
 
-### `npm run eject`
+1. Сайт развёрнут на github-pages:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+TODO: Добавить ссылку на gh-pages
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Развернуть приложение локально (см. далее)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Как развернуть приложение локально
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Скопировать репозиторий:
 
-## Learn More
+```
+git clone https://github.com/dumbus/music-widget.git
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Поменять текущую папку:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+cd music-widget
+```
 
-### Code Splitting
+3. Установить зависимости:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+npm install
+```
 
-### Analyzing the Bundle Size
+4. Запустить приложение:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+npm run start
+```
 
-### Making a Progressive Web App
+5. Открыть приложение в браузере:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+http://localhost:{port}
+```
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> По умолчанию port = 3000
