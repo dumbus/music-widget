@@ -30,10 +30,10 @@
 
 ## Как посмотреть на работу приложения
 
-1. Сайт развёрнут на github-pages:
+1. Сайт развёрнут на github-pages и доступен по адресу:
 
 ```
-TODO: Добавить ссылку на gh-pages
+https://dumbus.github.io/music-widget
 ```
 
 2. Развернуть приложение локально (см. далее)
@@ -67,7 +67,7 @@ npm run start
 5. Открыть приложение в браузере:
 
 ```
-http://localhost:{port}
+http://localhost:{port}/music-widget
 ```
 
 > По умолчанию port = 3000
